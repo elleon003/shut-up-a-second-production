@@ -1,0 +1,91 @@
+// Custom Colors
+$body-color:#262626;
+$black: #262626;
+$dark:  #262626;
+$white: #EAE0D5;
+$secondary: #EAE0D5;
+$danger:  #F34213;
+$success: #B73E1D;
+
+// Custom Fonts
+$headings-font-family: 'Open Sans', sans-serif;
+$font-family-base: 'Raleway', sans-serif;
+
+
+// Import parts Bootstrap
+
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+@import "node_modules/bootstrap/scss/buttons";
+@import "node_modules/bootstrap/scss/alert";
+@import "node_modules/bootstrap/scss/forms";
+@import "node_modules/bootstrap/scss/pagination";
+@import "node_modules/bootstrap/scss/transitions";
+@import "node_modules/bootstrap/scss/utilities";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/nav";
+@import "node_modules/bootstrap/scss/navbar";
+@import "node_modules/bootstrap/scss/grid";
+
+
+// MY OTHER CUSTOM SETTINGS
+.navbar-brand {
+    font-family: 'Allerta Stencil', sans-serif;
+    font-size:2rem;
+}
+
+.border-1 {
+    border-width: .25rem !important;
+    border-color:#262626;
+}
+
+/* CUSTOM MOBILE SETTINGS */
+@media only screen and (max-width:991.98px){   
+    .border-mobile {
+        border: .25rem #262626 solid !important;
+    }
+    .border-mobile-right {
+        border-right: .25rem #262626 solid !important;
+    }
+    .border-mobile-left {
+        border-left: .25rem #262626 solid !important;
+    }
+    .border-mobile-top {
+        border-top: .25rem #262626 solid !important;
+    }
+    .border-mobile-bottom {
+        border-bottom: .25rem #262626 solid !important;
+    }
+    .contact-row {
+        height:auto;
+    }
+    .sm-order-first {
+        order: -1;
+    }
+}
+
+/* CUSTOM DESKTOP SETTINGS */
+@media only screen and (min-width: 992px) {
+    .border-lg {
+        border: .25rem #262626 solid !important;
+    }
+    .border-lg-right {
+        border-right: .25rem #262626 solid !important;
+    }
+    .border-lg-left {
+        border-left: .25rem #262626 solid !important;
+    }
+    .border-lg-top {
+        border-top: .25rem #262626 solid !important;
+    }
+    .border-lg-bottom {
+        border-bottom: .25rem #262626 solid !important;
+    }
+    .contact-row {
+        height:12em;
+    }
+}

@@ -3,20 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shut Up a Second</title>
+  <title>Shut Up a Second.</title>
 
-  <!-- BOOTSTRAP CSS -->
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Open+Sans&family=Raleway&display=swap" rel="stylesheet"> 
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/7a5f159d5d.js" crossorigin="anonymous"></script>
 
   <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="css/custom.css">
+
 </head>
-<body>
+<body class="d-flex flex-column h-100">
   
   <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary d-flex border-bottom border-dark border-1">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark d-flex border-bottom border-dark border-1">
       <div class="w-25 d-flex justify-content-lg-center">
-        <a class="navbar-brand ml-lg-5" href="#">Shut Up A Second</a>
+        <a class="navbar-brand ml-lg-5" href="/static">Shut Up a Second.</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -25,54 +29,77 @@
       <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarToggler">
         <ul class="navbar-nav mr-lg-5">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/static">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <a class="nav-link" href="/about.html">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="/blog">Blog</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact Me</a>
+            <a class="nav-link" href="/contact.html">Contact Me</a>
           </li>
         </ul>
       </div>
     </nav>
   </header>
 
-  <main>
+  <main role="main" class="flex-shrink-0">
     <!-- Photo & About blurb -->
-    <div class="container-fluid bg-light border-lg-bottom">
+    <div class="container-fluid bg-secondary border-lg-bottom">
       <section>
         <div class="row">
           <div class="col-lg-7 border-lg-right px-0 border-mobile-bottom">
             <img src="img/man.jpeg" class="img-fluid">
           </div>
           <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-mobile-bottom">
-            <h2 class="px-1">Everybody shut up a second!!!</h2>
-            <p class="px-1">....ok, now that I have your attention, this is the about section. You can write what you want here.</p>
-            <p><a href="#" class="text-info px-1 font-weight-bold">Read More >> </a></p>
+            <h2 class="px-3">Everybody shut up a second!!!</h2>
+            <p class="px-3 lead">....ok, now that I have your attention, this is the about section. You can write what you want here.</p>
+            <p><a href="blog/most-recent.html" class="text-danger px-3 font-weight-bold">Read More >> </a></p>
           </div>
         </div>
-
       </section>
     </div>
-    <!-- Recent post -->
-    <div class="container-fluid bg-light">
-      <section class="vh-100">
+    <!-- Most Recent post -->
+    <div class="container-fluid bg-secondary border-lg-bottom">
+      <section>
         <div class="row">
-          <div class="col-lg-7 border-right border-dark border-1 px-0">
+          <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-lg-right border-mobile-bottom">
+            <h2 class="px-3">This is the title of a blog</h2>
+            <p class="px-3 lead">Did you know that penguins have knees? It's true. I could say more stuff here, but I'll just let you think there's more with some ellipsis.....</p>
+            <p><a href="#" class="text-danger px-3 font-weight-bold">Read More >> </a></p>
           </div>
-          <div class="col-lg-5 border-right border-dark border-1 px-0">
+          <div class="col-lg-7 px-0 border-mobile-bottom">
+            <img src="img/dog.jpeg" class="img-fluid">
           </div>
         </div>
       </section>
-
     </div>
-
-
+    <!-- Contact info -->
+    <div class="container-fluid bg-secondary border-lg-bottom">
+      <section>
+        <div class="row contact-row">
+          <div class="col-lg-4 col-6 order-lg-first border-lg-right border-mobile-right">
+            <a href="#" class="text-body d-block text-center mt-2"><i class="fab fa-facebook fa-10x"></i></a></h2>
+          </div>
+          <div class="col-lg-4 col-12 sm-order-first border-lg-right border-mobile-bottom">
+            <h2 class="text-center mt-2"><a href="contact.html" class="text-body">Contact Me</a></h2>
+            <p class="lead text-center text-lg-left">Here's a catchy phrase to get people to click to the contact page.</p>
+            <a class="btn btn-outline-danger d-block text-center mb-4 mb-lg-0" href="contact.html">Contact Me</a>
+          </div>
+          <div class="col-lg-4 col-6">
+            <a href="#" class="text-body d-block text-center mt-2"><i class="fab fa-twitter-square fa-10x"></i></a>
+          </div>
+        </div>
+      </section>
+    </div>
   </main>
+  <footer class="footer py-2 mt-auto bg-dark text-center">
+    <div class="container-fluid">
+      <p class="lead text-light">&copy;2020 <a href="/static" class="text-muted">Shut Up a Second.com</a></p>
+    </div>
+  </footer>
 
   <!-- BOOTSTRAP JS -->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
