@@ -1,40 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shut Up a Second</title>
+  <title>Shut Up a Second.</title>
 
-  <!-- BOOTSTRAP CSS -->
-  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css">
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Open+Sans&family=Raleway&display=swap"
+    rel="stylesheet">
+
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/7a5f159d5d.js" crossorigin="anonymous"></script>
 
   <!-- CUSTOM CSS -->
-  <link rel="stylesheet" href="css/custom.css">
+  <link rel="stylesheet" href="../css/custom.css">
+
 </head>
+
 <body class="d-flex flex-column h-100">
-  
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-secondary d-flex border-bottom border-dark border-1">
+
+  <header class="mb-5">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark d-flex border-bottom border-dark border-1">
       <div class="w-25 d-flex justify-content-lg-center">
-        <a class="navbar-brand ml-lg-5" href="/static">Shut Up A Second</a>
+        <a class="navbar-brand ml-lg-5" href="/">Shut Up a Second.</a>
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-        </button>
-    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
       <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarToggler">
         <ul class="navbar-nav mr-lg-5">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../about.html">About</a>
+          </li>
           <li class="nav-item active">
-            <a class="nav-link" href="/static">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="blog">Blog <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/about.html">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/blog">Blog</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/contact.html">Contact Me</a>
+            <a class="nav-link" href="../contact.html">Contact Me</a>
           </li>
         </ul>
       </div>
@@ -42,17 +50,74 @@
   </header>
 
   <main role="main" class="flex-shrink-0">
+    <!-- Photo & About blurb -->
+    <div class="container-fluid bg-secondary mt-4">
+      <section>
+        <div class="row">
+          <div class="col-lg-7 border-lg-bottom">
+            <h2 class="mt-4"><a class="text-body" href="most-recent.html">What the Hell???</a></h2>
+            <p><small>April 30, 2020</small></p>
+            <p class="lead">I need a fake passport, preferably to France… I like the way they think. God knows they're
+              squinters. A Colombian cartel that WON'T kidnap and kill you. [Stabbing Gob] White power! Gob: I'm white!
+              So did you see the new Poof? His name's Gary and we don't need anymore lawsuits. </p>
+            <p><a href="most-recent.html" class="text-danger  font-weight-bold">Read More >> </a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="offset-lg-5 col-lg-7 border-lg-bottom">
+            <h2 class="mt-4"><a class="text-body" href="most-recent.html">Who do you think you are?</a></h2>
+            <p><small>April 29, 2020</small></p>
+            <p class="lead">When a man needs to prove to a woman that he's actually… When a man loves a woman… Let the
+              great experiment begin! Oh, like when they say "poofter" to mean "tourist", yes. It looks like you've been
+              looking for dragons… in the future. </p>
+            <p><a href="most-recent.html" class="text-danger  font-weight-bold">Read More >> </a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-7 border-lg-bottom">
+            <h2 class="mt-4"><a class="text-body" href="most-recent.html">Asking for a friend</a></h2>
+            <p><small>April 27, 2020</small></p>
+            <p class="lead">I need a fake passport, preferably to France… I like the way they think. God knows they're
+              squinters. A Colombian cartel that WON'T kidnap and kill you. [Stabbing Gob] White power! Gob: I'm white!
+              So did you see the new Poof? His name's Gary and we don't need anymore lawsuits. </p>
+            <p><a href="most-recent.html" class="text-danger  font-weight-bold">Read More >> </a></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="offset-lg-5 col-lg-7 border-lg-bottom">
+            <h2 class="mt-4"><a class="text-body" href="most-recent.html">That friend is your mom!</a></h2>
+            <p><small>April 26, 2020</small></p>
+            <p class="lead">When a man needs to prove to a woman that he's actually… When a man loves a woman… Let the
+              great experiment begin! Oh, like when they say "poofter" to mean "tourist", yes. It looks like you've been
+              looking for dragons… in the future. </p>
+            <p><a href="most-recent.html" class="text-danger  font-weight-bold">Read More >> </a></p>
+          </div>
+        </div>
+      </section>
+      <nav aria-label="Page navigation">
+        <ul class="pagination pagination-lg justify-content-center my-3">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true"><< Earlier Posts</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link text-success" href="#">Later Posts >></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </main>
   <footer class="footer py-2 mt-auto bg-dark text-center">
     <div class="container-fluid">
-      <p class="lead text-light">&copy;2020 <a href="/static" class="text-muted">Shut Up a Second.com</a></p>
+      <p class="lead text-light">&copy;2020 <a href="/" class="text-muted">Shut Up a Second.com</a></p>
     </div>
   </footer>
 
   <!-- BOOTSTRAP JS -->
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="js/bootstrap/bootstrap.bundle.min.js"></script>
-  
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
+  <script src="js/bootstrap/bootstrap.min.js"></script>
+
 </body>
+
 </html>
