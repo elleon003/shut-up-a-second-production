@@ -14,7 +14,7 @@
   <script src="https://kit.fontawesome.com/7a5f159d5d.js" crossorigin="anonymous"></script>
 
   <!-- CUSTOM CSS -->
-  <link rel="stylesheet" href="../css/custom.css">
+  <link rel="stylesheet" href="../css/custom.min.css">
 
 </head>
 
@@ -50,7 +50,6 @@
   </header>
 
   <main role="main" class="flex-shrink-0">
-    <!-- Photo & About blurb -->
     <div class="container bg-secondary mt-5">
       <section>
         <div class="row">
@@ -84,16 +83,47 @@
           </div>
         </div>
       </section>
-      <div class="row">
+      <div class="row my-4">
         <div class="col-lg-6">
-          <p class="lead font-weight-bold"><a class="text-success" href="#"><< The title of a previous post</a></p>
+          <p class="lead"><a class="text-success font-weight-bold" href="#"><< The title of a previous post</a></p>
         </div>
         <div class="col-lg-6 justify-content-end">
-          <p class="lead font-weight-bold text-lg-right text-success"><a class="text-success"  href="#">The title of a later post >></a></p>
+          <p class="lead text-lg-right"><a class="text-success font-weight-bold"  href="#">The title of a later post >></a></p>
         </div>
       </div>
     </div>
   </main>
+  <aside class="email-signup">
+    <div class="container-fluid bg-secondary mt-3">
+      <div class="row">
+        <div class="col-lg-4 col-6 order-lg-first border-lg-right border-mobile-right">
+          <img src="../img/man.jpeg" class="img-fluid">
+        </div>
+        <div class="col-lg-4 col-12 sm-order-first border-lg-right border-mobile-bottom">
+          <form>
+            <div class="form-group">
+              <h3>Sign up for my newsletter</h3>
+            </div>
+            <div class="form-group">
+              <p class="lead">Here's some clever text to get people to sign up.</p>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" id="first-name" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <input type="email" class="form-control" id="signup" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-danger">Sign Up!</button>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-4 col-6">
+          <img src="../img/dog.jpeg" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </aside>
   <footer class="footer py-2 mt-auto bg-dark text-center">
     <div class="container-fluid">
       <p class="lead text-light">&copy;2020 <a href="/" class="text-muted">Shut Up a Second.com</a></p>
