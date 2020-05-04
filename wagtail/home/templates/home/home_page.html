@@ -1,21 +1,24 @@
 {% extends "base.html" %}
-{% load static %}
+{% load wagtailimages_tags%}
 
-{% block body_class %}template-homepage{% endblock %}
-
-{% block extra_css %}
-
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-<link rel="stylesheet" href="{% static 'css/welcome_page.css' %}">
-{% endblock extra_css %}
 
 {% block content %}
+  <!-- Photo & About blurb -->
+  <div class="container-fluid bg-secondary border-lg-bottom">
+    <section>
+      <div class="row">
+        <div class="col-lg-7 border-lg-right px-0 border-mobile-bottom">
+          {% image page.top_image max-1280x930 class="img-fluid" %}
+          <!-- <img src="img/man.jpeg" class="img-fluid"> -->
+        </div>
+        <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-mobile-bottom">
+          <h2 class="px-3">{{ page.about_header }}</h2>
+          <p class="px-3 lead">{{ page.lead_text }}</p>
+          <p><a href="{{ page.linked_page.url }}" class="text-danger px-3 font-weight-bold">{{ page.linked_page_text }} >> </a></p>
+        </div>
+      </div>
+    </section>
+  </div>
 
-{% comment %}
-Delete the line below if you're just getting started and want to remove the welcome screen!
-{% endcomment %}
-{% include 'home/welcome_page.html' %}
 
 {% endblock content %}

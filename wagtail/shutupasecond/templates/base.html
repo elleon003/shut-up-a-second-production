@@ -1,40 +1,58 @@
 {% load static wagtailuserbar %}
 
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <title>
-            {% block title %}
-                {% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
-            {% endblock %}
-            {% block title_suffix %}
-                {% with self.get_site.site_name as site_name %}
-                    {% if site_name %}- {{ site_name }}{% endif %}
-                {% endwith %}
-            {% endblock %}
-        </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+<html class="no-js h-100" lang="en">
 
-        {# Global stylesheets #}
-        <link rel="stylesheet" type="text/css" href="{% static 'css/shutupasecond.css' %}">
+<head>
+	<meta charset="utf-8" />
+	<title>
+		{% block title %}
+		{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}
+		{% endblock %}
+		{% block title_suffix %}
+			{% with self.get_site.site_name as site_name %}
+				{% if site_name %}- {{ site_name }}{% endif %}
+			{% endwith %}
+		{% endblock %}
+	</title>
+	<meta name="description" content="" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-        {% block extra_css %}
-            {# Override this in templates to add extra stylesheets #}
-        {% endblock %}
-    </head>
+	{# Global stylesheets #}
 
-    <body class="{% block body_class %}{% endblock %}">
-        {% wagtailuserbar %}
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
+	
+	<!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/7a5f159d5d.js" crossorigin="anonymous"></script>
 
-        {% block content %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/custom.css' %}">
 
-        {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/shutupasecond.js' %}"></script>
+	{% block extra_css %}
+	{# Override this in templates to add extra stylesheets #}
+	{% endblock %}
+</head>
 
-        {% block extra_js %}
-            {# Override this in templates to add extra javascript #}
-        {% endblock %}
-    </body>
+<body class="d-flex flex-column h-100">
+	{% wagtailuserbar %}
+
+	<main role="main" class="flex-shrink-0">
+		{% block content %}{% endblock %}
+	</main>
+
+	<footer class="footer py-2 mt-auto bg-dark text-center">
+    <div class="container-fluid">
+      <p class="lead text-light">&copy;2020 <a href="/" class="text-muted">Shut Up a Second.com</a></p>
+    </div>
+  </footer>
+
+	{# Global javascript #}
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+	{% block extra_js %}
+	{# Override this in templates to add extra javascript #}
+	{% endblock %}
+</body>
+
 </html>
