@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% load wagtailcore_tags %}
+
+{% block content %}
+  <div class="container bg-secondary mt-5">
+    <section>
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center mb-4">{{ page.title }}</h2>
+          <!-- start slipsum code -->
+          <p class="blog-date">{{ page.post_date }}</p>
+
+          <p class="blog-text"> {{ page.body|richtext }}</p>
+        </div>
+      </div>
+    </section>
+    <div class="row my-4">
+      <div class="col-lg-6">
+        <p class="lead"><a class="text-success font-weight-bold" href="#">
+            << TODO link to previous post</a> </p> </div> <div class="col-lg-6 justify-content-end">
+              <p class="lead text-lg-right"><a class="text-success font-weight-bold" href="#">TODO link to next post
+                  >></a></p>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- TODO ADD {% block aside %} -->

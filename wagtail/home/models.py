@@ -50,6 +50,7 @@ class HomePage(Page):
 
     # TODO Third Row - Contact info
 
+    parent_page_types = []
 
 
     content_panels = Page.content_panels + [
@@ -66,4 +67,4 @@ class HomePage(Page):
         )
     ]
 
-    parent_page_types = []
+    
