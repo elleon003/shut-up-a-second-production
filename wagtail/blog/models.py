@@ -6,8 +6,16 @@ from wagtail.admin.edit_handlers import FieldPanel
 
 
 class BlogListingPage(Page):
-    pass
-    # TODO 
+    parent_page_types = ["home.HomePage"]
+    subpage_types = ["blog.BlogPost"]
+    max_count = 1
+
+    def get_context(self, request, *args, **kwargs):
+        context = super().get_context(request, *args, **kwargs)
+        context['posts'] = BlogPost.objects.live().order_by('-first_published_at')
+    
+        return context
+
 
 class BlogPost(Page):
     post_date = models.DateField(
@@ -18,5 +26,6 @@ class BlogPost(Page):
         FieldPanel('post_date'),
         FieldPanel('body'),
     ]
-
+    parent_page_types = ["blog.BlogListingPage"]
     subpage_types = []
+

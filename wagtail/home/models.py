@@ -51,6 +51,8 @@ class HomePage(Page):
     # TODO Third Row - Contact info
 
     parent_page_types = []
+    max_count = 1
+    subpage_types = ["blog.BlogListingPage",]
 
 
     content_panels = Page.content_panels + [
