@@ -4,6 +4,8 @@ from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel, MultiFieldPanel, PageChooserPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
+from blog.models import BlogPost
+
 
 class HomePage(Page):
     # First Row content
@@ -44,6 +46,11 @@ class HomePage(Page):
 
     # TODO - second row content
         # Img Uploader
+    def get_context(self, request):
+        context = super(HomePage, self).get_context(request)
+        context['latest_post'] = BlogPost.objects.live().last()
+        return context
+
         # Most Recent Post Heading
         # Most Recent Post Blurb
         # Link to Post

@@ -10,17 +10,23 @@
           <h2 class="text-center mb-4">{{ page.title }}</h2>
           <!-- start slipsum code -->
           <p class="blog-date">{{ page.post_date }}</p>
-
-          <p class="blog-text"> {{ page.body|richtext }}</p>
+          <div class="blog-text">
+            <p>{{ page.body|richtext }}</p>
+          </div>
         </div>
       </div>
     </section>
     <div class="row my-4">
       <div class="col-lg-6">
-        <p class="lead"><a class="text-success font-weight-bold" href="#">
-            << TODO link to previous post</a> </p> </div> <div class="col-lg-6 justify-content-end">
-              <p class="lead text-lg-right"><a class="text-success font-weight-bold" href="#">TODO link to next post
-                  >></a></p>
+        {% if self.next_post %}
+          <p class="lead"><a class="text-success font-weight-bold" href="{{ self.next_post.specific.url }}"><< {{ self.next_post.specific.title }}</a></p> 
+        {% endif %}
+      </div> 
+      <div class="col-lg-6 d-flex justify-content-end">
+        {% if self.prev_post %}
+         <p class="lead"><a class="text-success font-weight-bold" href="{{ self.prev_post.specific.url }}">
+            {{ self.prev_post.specific.title }} >></a></p>
+        {% endif %}
       </div>
     </div>
   </div>

@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load wagtailimages_tags%}
+{% load wagtailcore_tags %}
 
 
 {% block content %}
@@ -19,6 +20,21 @@
       </div>
     </section>
   </div>
-
+  <!-- Most Recent post -->
+  <div class="container-fluid bg-secondary border-lg-bottom">
+    <section>
+      <div class="row">
+        <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-lg-right border-mobile-bottom">
+          <h2 class="display-4 px-3 pb-2 text-success">Latest Blog Post</h2>
+          <h3 class="px-3">{{ latest_post.title }}</h3>
+          <div class="px-3 lead">
+            <!-- TODO - NEED BLURB NOT WHOLE POST -->
+            <p>{{ latest_post.body|safe }}</p>
+          </div>
+          <p><a href="{{ latest_post.url }}" class="text-danger px-3 font-weight-bold">Read More >> </a></p>
+        </div>
+      </div>
+    </section>
+  </div>
 
 {% endblock content %}

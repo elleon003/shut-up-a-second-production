@@ -11,7 +11,10 @@
           <div class="col-lg-7 border-lg-bottom">
             <h2 class="mt-4"><a class="text-body" href="{{ post.url }}">{{ post.title }}</a></h2>
             <p><small>{{ post.post_date }}</small></p>
-            <p class="lead">{{ post.body|richtext }}</p>
+            <!-- TODO - NEED BLURB NOT WHOLE POST -->
+            <div class="lead">
+              <p>{{ post.body|richtext }}</p>
+            </div>
             <p><a href="{{ post.url }}" class="text-danger  font-weight-bold">Read More >> </a></p>
           </div>
         </div>
@@ -20,7 +23,10 @@
           <div class="offset-lg-5 col-lg-7 border-lg-bottom">
             <h2 class="mt-4"><a class="text-body" href="{{ post.url }}">{{ post.title }}</a></h2>
             <p><small>{{ post.post_date }}</small></p>
-            <p class="lead">{{ post.body|richtext }}</p>
+            <!-- TODO - NEED BLURB NOT WHOLE POST -->
+            <div class="lead">
+              <p>{{ post.body|richtext }}</p>
+            </div>
             <p><a href="{{ post.url }}" class="text-danger  font-weight-bold">Read More >> </a></p>
           </div>
         </div>
