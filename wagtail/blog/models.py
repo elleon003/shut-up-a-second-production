@@ -21,18 +21,23 @@ class BlogPost(Page):
         "Post Date")
     body = RichTextField(blank=True)
 
+
     def prev_post(self):
-        if self.get_prev_sibling():
-            return self.get_prev_sibling()
+        prev = self.get_prev_sibling()
+        if prev and prev.live:
+            return prev
     
     def next_post(self):
-        if self.get_next_sibling():
-            return self.get_next_sibling()
+        next = self.get_next_sibling()
+        if next and next.live:
+            return next
+
+    parent_page_types = ["blog.BlogListingPage"]
+    subpage_types = []
 
     content_panels = Page.content_panels + [
         FieldPanel('post_date'),
         FieldPanel('body'),
     ]
-    parent_page_types = ["blog.BlogListingPage"]
-    subpage_types = []
+    
 

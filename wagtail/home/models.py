@@ -59,7 +59,7 @@ class HomePage(Page):
 
     parent_page_types = []
     max_count = 1
-    subpage_types = ["blog.BlogListingPage",]
+    subpage_types = ["blog.BlogListingPage", "sitepage.SitePage",]
 
 
     content_panels = Page.content_panels + [
