@@ -45,7 +45,14 @@ class HomePage(Page):
     )
 
     # TODO - second row content
-        # Img Uploader
+    second_image = models.ForeignKey(
+        'wagtailimages.Image',
+        blank=False,
+        null=True,
+        related_name='+',
+        on_delete=models.SET_NULL,
+        help_text='The top, primary image'
+    )
     def get_context(self, request):
         context = super(HomePage, self).get_context(request)
         context['latest_post'] = BlogPost.objects.live().last()
@@ -63,6 +70,7 @@ class HomePage(Page):
 
 
     content_panels = Page.content_panels + [
+        # First Row Content
         MultiFieldPanel(
             [
                 ImageChooserPanel("top_image"),
@@ -73,7 +81,9 @@ class HomePage(Page):
             ],
             heading="First Row",
             classname="collapsible",
-        )
+        ),
+        # Second Row Content
+        ImageChooserPanel('second_image'),
     ]
 
     

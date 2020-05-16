@@ -9,7 +9,7 @@
     <section>
       <div class="row">
         <div class="col-lg-7 border-lg-right px-0 border-mobile-bottom">
-          {% image page.top_image max-1280x930 class="img-fluid" %}
+          {% image page.top_image fill-1280x930 class="img-fluid" %}
           <!-- <img src="img/man.jpeg" class="img-fluid"> -->
         </div>
         <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-mobile-bottom">
@@ -29,9 +29,12 @@
           <h3 class="px-3">{{ latest_post.title }}</h3>
           <div class="px-3 lead">
             <!-- TODO - NEED BLURB NOT WHOLE POST -->
-            <p>{{ latest_post.body|safe }}</p>
+            <p>{{ latest_post.body|safe|truncatewords:50 }}</p>
           </div>
           <p><a href="{{ latest_post.url }}" class="text-danger px-3 font-weight-bold">Read More >> </a></p>
+        </div>
+        <div class="col-lg-7 px-0 border-mobile-bottom">
+          {% image page.second_image fill-1280x930 class="img-fluid" %}
         </div>
       </div>
     </section>

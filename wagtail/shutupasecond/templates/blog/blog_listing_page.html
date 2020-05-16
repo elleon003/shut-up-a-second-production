@@ -7,25 +7,25 @@
   <section>
     {% for post in posts %}
       {% if forloop.counter0|divisibleby:"2" %}
-        <div class="row">
+        <div class="row even-row">
           <div class="col-lg-7 border-lg-bottom">
             <h2 class="mt-4"><a class="text-body" href="{{ post.url }}">{{ post.title }}</a></h2>
             <p><small>{{ post.post_date }}</small></p>
             <!-- TODO - NEED BLURB NOT WHOLE POST -->
             <div class="lead">
-              <p>{{ post.body|richtext }}</p>
+              {{ post.body|safe|truncatewords:35 }}
             </div>
             <p><a href="{{ post.url }}" class="text-danger  font-weight-bold">Read More >> </a></p>
           </div>
         </div>
       {% else %}
-        <div class="row">
+        <div class="row odd-row">
           <div class="offset-lg-5 col-lg-7 border-lg-bottom">
             <h2 class="mt-4"><a class="text-body" href="{{ post.url }}">{{ post.title }}</a></h2>
             <p><small>{{ post.post_date }}</small></p>
             <!-- TODO - NEED BLURB NOT WHOLE POST -->
             <div class="lead">
-              <p>{{ post.body|richtext }}</p>
+              {{ post.body|safe|truncatewords:35 }}
             </div>
             <p><a href="{{ post.url }}" class="text-danger  font-weight-bold">Read More >> </a></p>
           </div>
