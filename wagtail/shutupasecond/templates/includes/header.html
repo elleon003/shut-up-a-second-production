@@ -1,3 +1,7 @@
+{% load menu_tags %}
+
+{% get_menu "header" as navigation %}
+
 <header class="mb-5">
   <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark d-flex border-bottom border-dark border-1">
     <div class="w-25 d-flex justify-content-lg-center">
@@ -10,18 +14,16 @@
 
     <div class="collapse navbar-collapse d-lg-flex justify-content-end" id="navbarToggler">
       <ul class="navbar-nav mr-lg-5">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="TODO">TODO-About</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="TODO">TODO-Blog</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="TODO">TODO-Contact Me</a>
-        </li>
+        </li> -->
+        {% for item in navigation.menu_items.all %}
+          <li class="nav-item {% if item.link_page.url == request.path %} active {% endif %}">
+            <a class="nav-link" href="{{ item.link_page.url }}">
+              {{ item.link_title }}
+            </a>
+          </li>
+        {% endfor %}
       </ul>
     </div>
   </nav>

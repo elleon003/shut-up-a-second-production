@@ -50,4 +50,5 @@ class SitePage(Page):
         FieldPanel("newsletter_text"),
     ]
     
+    parent_page_types = ["home.HomePage"]
     subpage_types = []
