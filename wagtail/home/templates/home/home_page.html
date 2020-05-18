@@ -28,7 +28,6 @@
           <h2 class="display-4 px-3 pb-2 text-success">Latest Blog Post</h2>
           <h3 class="px-3">{{ latest_post.title }}</h3>
           <div class="px-3 lead">
-            <!-- TODO - NEED BLURB NOT WHOLE POST -->
             <p>{{ latest_post.body|safe|truncatewords:50 }}</p>
           </div>
           <p><a href="{{ latest_post.url }}" class="text-danger px-3 font-weight-bold">Read More >> </a></p>
@@ -41,3 +40,27 @@
   </div>
 
 {% endblock content %}
+
+{% block aside %}
+  <div class="container-fluid bg-secondary border-lg-bottom">
+    <section>
+      <div class="row contact-row">
+        <div class="col-lg-4 col-6 order-lg-first border-lg-right border-mobile-right">
+          <a href="{{ page.facebook_link }}" class="text-body d-block text-center mt-2 mb-2 mb-lg-0" target="__blank"><i
+              class="fab fa-facebook fa-10x"></i></a>
+          </h2>
+        </div>
+        <div class="col-lg-4 col-12 sm-order-first border-lg-right border-mobile-bottom">
+          <h2 class="text-center mt-2"><a href="{{ page.section_button.url }}" class="text-body">{{ page.section_title }}</a></h2>
+          <p class="lead text-center text-lg-left">
+            {{ page.section_text }}
+          </p>
+          <a class="btn btn-outline-danger d-block text-center mb-4 mb-lg-0" href="{{ page.section_button.url }}">{{ page.section_button_text }}</a>
+        </div>
+        <div class="col-lg-4 col-6">
+          <a href="{{ page.twitter_link }}" class="text-body d-block text-center mt-2" target="__blank"><i class="fab fa-twitter-square fa-10x"></i></a>
+        </div>
+      </div>
+    </section>
+  </div>
+{% endblock %}

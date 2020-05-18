@@ -42,12 +42,7 @@ class BlogPost(Page):
         help_text='Primary Post Image'
     )
 
-    # FIX THIS!!!!!!! - CODE TO INCLUDE HOME PAGE IMAGES
-    # def get_context(self, request):
-    #     context = super(home.objects(), self).get_context(request)
-    #     context['left_image'] = home.top_image
-    #     context['right_image'] = home.second_image
-    #     return context
+    
 
     def prev_post(self):
         prev = self.get_prev_sibling()

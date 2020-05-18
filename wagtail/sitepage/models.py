@@ -5,7 +5,6 @@ from wagtail.core.fields import RichTextField
 from wagtail.admin.edit_handlers import FieldPanel
 from wagtail.images.edit_handlers import ImageChooserPanel
 
-import home
 
 class SitePage(Page):
     page_image = models.ForeignKey(
@@ -28,15 +27,27 @@ class SitePage(Page):
             "blockquote",
         ]
     )
-    # FIX THIS!!!!!!! - CODE TO INCLUDE HOME PAGE IMAGES
-    # def get_context(self, request):
-    #     context = super(home.objects(), self).get_context(request)
-    #     context['left_image'] = home.top_image
-    #     context['right_image'] = home.second_image
-    #     return context
+    newsletter_title = models.CharField(
+        max_length=140,
+        blank=False,
+        null=False,
+        default='Sign up for my newsletter'
+    )
+    newsletter_text = models.TextField(
+        max_length=500,
+        blank=True,
+        null=False,
+    )
 
     class Meta:
         verbose_name = "Site page"
         verbose_name_plural = "Site pages"
-
+    
+    content_panels = Page.content_panels + [
+        ImageChooserPanel("page_image"),
+        FieldPanel("page_content"),
+        FieldPanel("newsletter_title"),
+        FieldPanel("newsletter_text"),
+    ]
+    
     subpage_types = []

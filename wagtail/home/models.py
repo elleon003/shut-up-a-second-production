@@ -44,7 +44,7 @@ class HomePage(Page):
         help_text='Link text',
     )
 
-    # TODO - second row content
+    # Second row content
     second_image = models.ForeignKey(
         'wagtailimages.Image',
         blank=False,
@@ -58,16 +58,46 @@ class HomePage(Page):
         context['latest_post'] = BlogPost.objects.live().last()
         return context
 
-        # Most Recent Post Heading
-        # Most Recent Post Blurb
-        # Link to Post
-
-    # TODO Third Row - Contact info
+    # Third Row - Contact info
+    section_title = models.CharField(
+        max_length=100,
+        blank=False,
+        null=False,
+        default='Contact Me'
+    )
+    section_text = models.TextField(
+        max_length=500,
+        blank=True,
+        null=False,
+    )
+    section_button_text = models.CharField(
+        max_length=50,
+        blank=False,
+        null=False,
+        default="Contact Me",
+    )
+    section_button = models.ForeignKey(
+        'wagtailcore.Page',
+        blank=True,
+        null=True,
+        related_name="+",
+        help_text='Select a page to link to',
+        on_delete=models.SET_NULL,
+    )
+    facebook_link = models.URLField(
+        "Facebook link", 
+        blank=True,
+        help_text="Enter your full Facebook URL"
+    )
+    twitter_link = models.URLField(
+        "Twitter link",
+        blank=True,
+        help_text="Enter your full Twitter URL"
+    )
 
     parent_page_types = []
     max_count = 1
     subpage_types = ["blog.BlogListingPage", "sitepage.SitePage",]
-
 
     content_panels = Page.content_panels + [
         # First Row Content
@@ -79,11 +109,34 @@ class HomePage(Page):
                 PageChooserPanel("linked_page"),
                 FieldPanel("linked_page_text"),
             ],
-            heading="First Row",
-            classname="collapsible",
+            heading="First Row Content",
+            classname="collapsible collapsed",
         ),
         # Second Row Content
-        ImageChooserPanel('second_image'),
+        MultiFieldPanel(
+            [
+                ImageChooserPanel('second_image'),
+            ],
+            heading="Second Row Content",
+            classname="collapsible collapsed",
+        ),
+        # Third Row Content
+        MultiFieldPanel(
+            [
+                FieldPanel("section_title"),
+                FieldPanel("section_text"),
+                FieldPanel("section_button_text"),
+                PageChooserPanel("section_button"),
+                FieldPanel("facebook_link"),
+                FieldPanel("twitter_link"),
+            ],
+            heading="Third Row Content",
+            classname="collapsible collapsed",
+        )
+        
     ]
 
-    
+
+
+
+

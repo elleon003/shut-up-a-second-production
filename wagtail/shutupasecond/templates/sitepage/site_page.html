@@ -1,13 +1,18 @@
 {% extends "base.html" %}
-{% load wagtailimages_tags %}
+{% load wagtailcore_tags wagtailimages_tags %}
 
 {% block content %}
   <div class="container bg-secondary my-5">
-    <section>
-      <h2 class="text-center mb-4">{{ page.title }}</h2>
-    </section>
+    <h2 class="text-center mb-4">{{ page.title }}</h2>
+    {% image page.page_image fill-560x540 as img %}
+    {% if img %}
+      <img src="{{ img.url }}"
+      class="img-thumbnail featured-img border-md d-block mx-auto float-md-left img-fluid mb-md-2 mr-md-2">
+    {% endif %}
+    <div class="blog-text">
+      {{ page.page_content|richtext }}
+    </div>
   </div>
-
 {% endblock %}
 
 {% block aside %}
@@ -15,15 +20,16 @@
     <div class="container-fluid bg-secondary mt-3">
       <div class="row">
         <div class="col-lg-4 col-6 order-lg-first border-lg-right border-mobile-right">
+          <!-- TODO - Need evergreen footer images -->
           {% image page.left_image fill-496x360 class="img-fluid" %}
         </div>
         <div class="col-lg-4 col-12 sm-order-first border-lg-right border-mobile-bottom">
           <form>
             <div class="form-group">
-              <h3>Sign up for my newsletter</h3>
+              <h3>{{ page.newsletter_title }}</h3>
             </div>
             <div class="form-group">
-              <p class="lead">Here's some clever text to get people to sign up.</p>
+              <p class="lead">{{ page.newsletter_text }}</p>
             </div>
             <div class="form-group">
               <input type="text" class="form-control" id="first-name" placeholder="First Name">
@@ -37,6 +43,7 @@
           </form>
         </div>
         <div class="col-lg-4 col-6">
+          <!-- TODO - Need evergreen footer images -->
           {% image page.right_image fill-496x360 class="img-fluid" %}
         </div>
       </div>
