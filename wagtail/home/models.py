@@ -97,7 +97,7 @@ class HomePage(Page):
 
     parent_page_types = []
     max_count = 1
-    subpage_types = ["blog.BlogListingPage", "sitepage.SitePage",]
+    subpage_types = ["blog.BlogListingPage", "sitepage.SitePage", "contact.ContactPage"]
 
     content_panels = Page.content_panels + [
         # First Row Content

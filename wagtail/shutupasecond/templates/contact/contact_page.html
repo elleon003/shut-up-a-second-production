@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags widget_tweaks %}
+
+{% block content %}
+  <div class="container bg-secondary my-5">
+    <form action="{% pageurl page %}" method="POST" role="form">
+      <div class="row">
+        <div class="col">
+          <div class="form-group">
+            <h3>{{ page.title }}</h3>
+            <div class="lead">
+              {{ page.intro|richtext }}
+            </div>
+          </div>
+        </div>
+      </div>
+      {%csrf_token %}
+
+    {% for field in form %}
+      <div class="row">
+        <div class="col">
+          {% if field|widget_type == 'textarea' %}
+          <div class="form-group">
+            {% render_field field class+="form-control" rows="3" placeholder=field.label %}
+            {% if field.errors %}
+            <small class="d-block text-danger text-small">
+              {% for err in field.errors %}
+              * {{ err|escape }}{% if not forloop.last %}<br />{% endif %}
+              {% endfor %}
+            </small>
+            {% endif %}
+            {% if field.help_text %}
+            <small class="form-text text-muted">{{ field.help_text|safe }}</small>
+            {% endif %}
+          </div>
+          {% else %}
+            {% if field.label != '' %}
+            <div class="form-group">
+              {% render_field field class+="form-control" placeholder=field.label %}
+              {% if field.errors %}
+              <small class="d-block text-danger text-small">
+                {% for err in field.errors %}
+                * {{ err|escape }}{% if not forloop.last %}<br />{% endif %}
+                {% endfor %}
+              </small>
+              {% endif %}
+              {% if field.help_text %}
+              <small class="form-text text-muted">{{ field.help_text|safe }}</small>
+              {% endif %}
+            </div>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+        <button type="submit" class="btn btn-danger">Drop me a line!</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+{% endblock %}
