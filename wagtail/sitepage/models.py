@@ -27,17 +27,6 @@ class SitePage(Page):
             "blockquote",
         ]
     )
-    newsletter_title = models.CharField(
-        max_length=140,
-        blank=False,
-        null=False,
-        default='Sign up for my newsletter'
-    )
-    newsletter_text = models.TextField(
-        max_length=500,
-        blank=True,
-        null=False,
-    )
 
     class Meta:
         verbose_name = "Site page"
@@ -46,8 +35,6 @@ class SitePage(Page):
     content_panels = Page.content_panels + [
         ImageChooserPanel("page_image"),
         FieldPanel("page_content"),
-        FieldPanel("newsletter_title"),
-        FieldPanel("newsletter_text"),
     ]
     
     parent_page_types = ["home.HomePage"]

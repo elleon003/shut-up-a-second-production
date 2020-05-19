@@ -42,8 +42,6 @@ class BlogPost(Page):
         help_text='Primary Post Image'
     )
 
-    
-
     def prev_post(self):
         prev = self.get_prev_sibling()
         if prev and prev.live:
