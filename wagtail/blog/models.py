@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 from wagtail.core.models import Page
 from wagtail.core.fields import RichTextField
@@ -14,7 +15,19 @@ class BlogListingPage(Page):
 
     def get_context(self, request, *args, **kwargs):
         context = super().get_context(request, *args, **kwargs)
-        context['posts'] = BlogPost.objects.live().order_by('-first_published_at')
+        all_posts = BlogPost.objects.live().order_by('-first_published_at')
+
+        paginator = Paginator(all_posts, 4)
+
+        page = request.GET.get("page")
+        try:
+            posts = paginator.page(page)
+        except PageNotAnInteger:
+            posts = paginator.page(1)
+        except EmptyPage:
+            posts = paginator.page(paginator.num_pages)
+        
+        context["posts"] = posts
         return context
 
 
