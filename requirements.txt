@@ -3,3 +3,4 @@ wagtail>=2.9,<3.0
 django-extensions==2.2.9
 django-widget-tweaks==1.4.8
 sentry-sdk==0.14.4
+python-decouple==3.3

@@ -51,10 +51,15 @@
             {% endif %}
           {% endif %}
         {% endfor %}
+        <div class="g-recaptcha" data-sitekey="6LdDI_sUAAAAAG5YHhFPdpW_PC_Lo7hWM9fHa5KF"></div>
         <button type="submit" class="btn btn-danger">Drop me a line!</button>
         </div>
       </div>
     </form>
   </div>
 
+{% endblock %}
+
+{% block extra_js %}
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 {% endblock %}
