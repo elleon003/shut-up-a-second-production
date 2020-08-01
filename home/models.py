@@ -47,7 +47,7 @@ class HomePage(Page):
     # Second row content
     second_image = models.ForeignKey(
         'wagtailimages.Image',
-        blank=False,
+        blank=True,
         null=True,
         related_name='+',
         on_delete=models.SET_NULL,
