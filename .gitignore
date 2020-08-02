@@ -5,6 +5,8 @@
 ### My System ###
 venv/
 .vscode/
+*.sql
+*.pgsql
 custom.css.map
 
 ### Django ###
