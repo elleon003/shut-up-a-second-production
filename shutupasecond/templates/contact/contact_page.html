@@ -33,8 +33,7 @@
             <small class="form-text text-muted">{{ field.help_text|safe }}</small>
             {% endif %}
           </div>
-          {% else %}
-            {% if field.label != '' %}
+          {% elif field.label != '' %}
             <div class="form-group">
               {% render_field field class+="form-control" placeholder=field.label %}
               {% if field.errors %}
@@ -48,10 +47,18 @@
               <small class="form-text text-muted">{{ field.help_text|safe }}</small>
               {% endif %}
             </div>
-            {% endif %}
+          {% else %}
+            <div class="form-group">
+              {{ field }}
+              {% if field.errors %}
+              <small class="d-block text-danger">
+                {% for err in field.errors %}
+                * {{ err|escape }}{% if not forloop.last %}<br />{% endif %}
+                {% endfor %}
+              {% endif %}
+            </div>
           {% endif %}
         {% endfor %}
-        <div class="g-recaptcha" data-sitekey="6LdDI_sUAAAAAG5YHhFPdpW_PC_Lo7hWM9fHa5KF"></div>
         <button type="submit" class="btn btn-danger">Drop me a line!</button>
         </div>
       </div>

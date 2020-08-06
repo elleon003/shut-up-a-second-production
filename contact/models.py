@@ -7,6 +7,11 @@ from wagtail.core.fields import RichTextField
 
 from modelcluster.models import ParentalKey
 
+from wagtailcaptcha.models import WagtailCaptchaEmailForm
+from wagtailcaptcha.forms import WagtailCaptchaFormBuilder
+
+
+# Admin choices for the class below
 FORM_FIELD_CHOICES = (
     ('singleline', _('Single line text')),
     ('multiline', _('Multi-line text')),
@@ -15,6 +20,7 @@ FORM_FIELD_CHOICES = (
 )
 
 
+# Limit the field choices in the admin
 class CustomAbstractFormField(AbstractFormField):
     field_type = models.CharField(
         verbose_name="Field Type",
@@ -26,7 +32,7 @@ class CustomAbstractFormField(AbstractFormField):
         ordering = ["sort_order"]
 
 
-class FormField(CustomAbstractFormField):
+class FormField(AbstractFormField):
     page = ParentalKey(
         "ContactPage",
         on_delete=models.CASCADE,
@@ -34,7 +40,7 @@ class FormField(CustomAbstractFormField):
     )
 
 
-class ContactPage(AbstractEmailForm):
+class ContactPage(WagtailCaptchaEmailForm):
     intro = RichTextField(
         blank=True,
         features=[
