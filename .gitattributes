@@ -1,1 +1,4 @@
 .env filter=git-crypt diff=git-crypt
+shutupasecond/settings/production.py filter=git-crypt diff=git-crypt
+shutupasecond/settings/dev.py filter=git-crypt diff=git-crypt
+shutupasecond/settings/base.py filter=git-crypt diff=git-crypt
