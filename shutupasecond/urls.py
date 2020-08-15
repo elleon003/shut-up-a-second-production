@@ -7,6 +7,8 @@ from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 from wagtail.contrib.sitemaps.views import sitemap
 
+from blog.feeds import RssFeed, AtomFeed
+
 from search import views as search_views
 
 urlpatterns = [
@@ -17,6 +19,9 @@ urlpatterns = [
     url(r'^search/$', search_views.search, name='search'),
 
     url(r'^sitemap.xml$', sitemap),
+
+    url(r'rss/', RssFeed(), name='rssfeed'),
+    url(r'atom/', AtomFeed(), name='atomfeed'),
 
 ]
 
