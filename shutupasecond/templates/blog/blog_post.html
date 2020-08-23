@@ -8,7 +8,6 @@
       <div class="row">
         <div class="col">
           <h2 class="text-center mb-4">{{ page.title }}</h2>
-          <!-- start slipsum code -->
           <p class="blog-date">{{ page.post_date }}</p>
           {% if page.blog_image %}
             {% image page.blog_image max-560x530 as img %}
@@ -21,6 +20,14 @@
         </div>
       </div>
     </section>
+    <div class="row">
+      <div class="col social-links">
+        <h2>Share this post on social media</h2>
+        <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}" class="text-body"  target="_blank" rel="noreferrer noopener" aria-label="Share To Facebook"><i
+          class="fab fa-facebook fa-7x"></i></a>
+          <a href="https://twitter.com/intent/tweet?text={{ page.specific.title|urlencode:'' }}%20{{ page.full_url }}%20@PeepMyNerdGame%20#shutupasecond" class="text-body" target="_blank" rel="noreferrer noopener" aria-label="Share To Twitter"><i class="fab fa-twitter-square fa-7x"></i></a>
+      </div>
+    </div>
     <div class="row my-4">
       <div class="col-lg-6">
         {% if self.next_post %}
