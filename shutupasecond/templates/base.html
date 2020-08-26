@@ -20,6 +20,12 @@
 
 	{# Global stylesheets #}
 
+	<!-- FAVICONS -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'favicons/apple-touch-icon.png' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicons/favicon-32x32.png' %}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicons/favicon-16x16.png' %}">
+	<link rel="manifest" href="{% static 'favicons/site.webmanifest' %}">
+
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css2?family=Allerta+Stencil&family=Open+Sans&family=Raleway&display=swap" rel="stylesheet">
 	
@@ -27,8 +33,7 @@
   <script src="https://kit.fontawesome.com/7a5f159d5d.js" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" type="text/css" href="{% static 'css/custom.min.css' %}">
-
-
+	
 	{% block extra_css %}
 	{# Override this in templates to add extra stylesheets #}
 	{% endblock %}
