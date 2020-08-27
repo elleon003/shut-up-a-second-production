@@ -13,12 +13,12 @@ from search import views as search_views
 
 urlpatterns = [
 
+    url(r'^sitemap.xml$', sitemap),
+
     url(r'^admin/', include(wagtailadmin_urls)),
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
-
-    url(r'^sitemap.xml$', sitemap),
 
     url(r'rss/', RssFeed(), name='rssfeed'),
     url(r'atom/', AtomFeed(), name='atomfeed'),
