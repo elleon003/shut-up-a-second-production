@@ -21,7 +21,8 @@
         <div class="col">
           {% if field|widget_type == 'textarea' %}
           <div class="form-group">
-            {% render_field field class+="form-control" rows="3" placeholder=field.label %}
+            {{ field.label }}
+            {% render_field field class+="form-control" rows="3"%}
             {% if field.errors %}
             <small class="d-block text-danger text-small">
               {% for err in field.errors %}
@@ -35,7 +36,8 @@
           </div>
           {% elif field.label != '' %}
             <div class="form-group">
-              {% render_field field class+="form-control" placeholder=field.label %}
+              {{ field.label }}
+              {{ field|add_class:"form-control" }}
               {% if field.errors %}
               <small class="d-block text-danger text-small">
                 {% for err in field.errors %}
@@ -59,7 +61,7 @@
             </div>
           {% endif %}
         {% endfor %}
-        <button type="submit" class="btn btn-danger">Drop me a line!</button>
+        <button type="submit" class="btn btn-success header-font">Drop me a line!</button>
         </div>
       </div>
     </form>
