@@ -14,7 +14,7 @@
             <div class="lead">
               {{ post.body|safe|truncatewords:35 }}
             </div>
-            <p><a href="{{ post.url }}" class="text-danger  font-weight-bold">Read More >> </a></p>
+            <p><a href="{{ post.url }}" class="btn btn-success header-font">Read More</a></p>
           </div>
         </div>
       {% else %}
@@ -25,7 +25,7 @@
             <div class="lead">
               {{ post.body|safe|truncatewords:35 }}
             </div>
-            <p><a href="{{ post.url }}" class="text-danger  font-weight-bold">Read More >> </a></p>
+            <p><a href="{{ post.url }}" class="btn btn-success header-font">Read More</a></p>
           </div>
         </div>
       {% endif %}
@@ -36,14 +36,14 @@
     <nav aria-label="Page navigation">
       <ul class="pagination pagination-lg justify-content-center my-3">
         {% if posts.has_previous %}
-          <li class="page-item">
-            <a class="page-link text-success" href="?page={{ posts.previous_page_number }}" tabindex="-1" aria-disabled="true">
-              &lt;&lt; Later Posts</a>
+          <li class="page-item mx-1 mx-md-2">
+            <a class="btn btn-success header-font" href="?page={{ posts.previous_page_number }}" tabindex="-1" aria-disabled="true">
+              &lt; Later Posts</a>
           </li> 
         {% endif %}
         {% if posts.has_next %}
-          <li class="page-item">
-            <a class="page-link text-success" href="?page={{ posts.next_page_number }}">Earlier Posts &gt;&gt;</a>
+          <li class="page-item mx-1 mx-md-2">
+            <a class="btn btn-success header-font" href="?page={{ posts.next_page_number }}">Earlier Posts &gt;</a>
           </li>
         {% endif %}
       </ul>
