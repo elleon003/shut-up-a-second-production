@@ -1214,6 +1214,10 @@ p {
   margin-bottom: 1rem;
 }
 
+.header-font {
+  font-family: "Allerta Stencil", sans-serif;
+}
+
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
@@ -7131,4 +7135,3 @@ a.text-dark:hover, a.text-dark:focus {
 .social-links {
   text-align:center;
 }
-

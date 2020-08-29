@@ -11,10 +11,10 @@
           {% image page.top_image scale-100 class="img-fluid" %}
           <!-- <img src="img/man.jpeg" class="img-fluid"> -->
         </div>
-        <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-mobile-bottom">
+        <div class="col-lg-5 px-0 py-3 d-flex flex-column justify-content-lg-center border-mobile-bottom">
           <h2 class="px-3">{{ page.about_header }}</h2>
           <p class="px-3 lead">{{ page.lead_text }}</p>
-          <p><a href="{{ page.linked_page.url }}" class="text-danger px-3 font-weight-bold">{{ page.linked_page_text }} >> </a></p>
+          <p><a href="{{ page.linked_page.url }}" class="btn btn-success header-font mx-3 px-3">{{ page.linked_page_text }}</a></p>
         </div>
       </div>
     </section>
@@ -23,13 +23,13 @@
   <div class="container-fluid bg-secondary border-lg-bottom">
     <section>
       <div class="row">
-        <div class="col-lg-5 px-0 d-flex flex-column justify-content-lg-center border-lg-right border-mobile-bottom">
-          <h2 class="display-4 px-3 pb-2 text-success">Latest Blog Post</h2>
+        <div class="col-lg-5 px-0 py-3 d-flex flex-column justify-content-lg-center border-lg-right border-mobile-bottom">
+          <h2 class="display-4 px-3 pb-2 text-success header-font">Latest Blog Post</h2>
           <h3 class="px-3">{{ latest_post.title }}</h3>
           <div class="px-3 lead">
             <p>{{ latest_post.body|safe|truncatewords:50 }}</p>
           </div>
-          <p><a href="{{ latest_post.url }}" class="text-danger px-3 font-weight-bold">Read More >> </a></p>
+          <p><a href="{{ latest_post.url }}" class="btn btn-success header-font mx-3 px-3">Read More</a></p>
         </div>
         <div class="col-lg-7 px-0 border-mobile-bottom">
           {% image page.second_image scale-100 class="img-fluid" %}

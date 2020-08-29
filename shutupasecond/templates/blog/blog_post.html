@@ -7,7 +7,7 @@
     <section>
       <div class="row">
         <div class="col">
-          <h2 class="text-center mb-4">{{ page.title }}</h2>
+          <h2 class="text-center mt-3 mb-4">{{ page.title }}</h2>
           <p class="blog-date">{{ page.post_date }}</p>
           {% if page.blog_image %}
             {% image page.blog_image max-560x530 as img %}
@@ -21,7 +21,7 @@
       </div>
     </section>
     <div class="row">
-      <div class="col social-links">
+      <div class="col social-links pt-3">
         <h2>Share this post on social media</h2>
         <a href="https://www.facebook.com/sharer/sharer.php?u={{ page.full_url }}" class="text-body"  target="_blank" rel="noreferrer noopener" aria-label="Share To Facebook"><i
           class="fab fa-facebook fa-7x"></i></a>
@@ -31,13 +31,13 @@
     <div class="row my-4">
       <div class="col-lg-6">
         {% if self.next_post %}
-          <p class="lead"><a class="text-success font-weight-bold" href="{{ self.next_post.specific.url }}"><< {{ self.next_post.specific.title }}</a></p> 
+          <p class="lead"><a class="btn btn-success header-font" href="{{ self.next_post.specific.url }}">< {{ self.next_post.specific.title }}</a></p> 
         {% endif %}
       </div> 
       <div class="col-lg-6 d-flex justify-content-end">
         {% if self.prev_post %}
-         <p class="lead"><a class="text-success font-weight-bold" href="{{ self.prev_post.specific.url }}">
-            {{ self.prev_post.specific.title }} >></a></p>
+         <p class="lead"><a class="btn btn-success header-font" href="{{ self.prev_post.specific.url }}">
+            {{ self.prev_post.specific.title }} ></a></p>
         {% endif %}
       </div>
     </div>
