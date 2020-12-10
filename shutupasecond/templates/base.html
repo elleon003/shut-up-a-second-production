@@ -4,8 +4,6 @@
 <html class="no-js h-100" lang="en">
 
 <head>
-	<!-- Plausible Analytics -->
-	<script async defer data-domain="shutupasecond.com" src="http://analytics.noelleanderson.dev/js/plausible.js"></script>
 	<meta charset="utf-8" />
 	<title>
 		{% block title %}
@@ -34,20 +32,9 @@
 	{% block extra_css %}
 	{# Override this in templates to add extra stylesheets #}
 	{% endblock %}
-	
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-174273283-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
 
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'UA-174273283-1');
-	</script>
-
+	<!-- Plausible Analytics -->
+	<script async defer data-domain="shutupasecond.com" src="http://analytics.noelleanderson.dev/js/plausible.js"></script>
 
 </head>
 
